@@ -25,7 +25,7 @@ class << ActiveRecord::Base
   alias_method_chain :belongs_to, :deleted
   alias_method :has_many_with_deleted, :has_many
   alias_method :has_many, :has_many_without_deleted
-  alias_method :exists_with_deleted?, :exists?
+  alias_method :_exists_with_deleted?, :exists?
 end
 ActiveRecord::Base.send :include, Caboose::Acts::Paranoid
 ActiveRecord::Base.send :include, Caboose::Acts::ParanoidFindWrapper
